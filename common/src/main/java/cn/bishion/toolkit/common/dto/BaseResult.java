@@ -2,14 +2,15 @@ package cn.bishion.toolkit.common.dto;
 
 import cn.bishion.toolkit.common.consts.BaseError;
 import cn.bishion.toolkit.common.consts.CommError;
-import cn.bishion.toolkit.common.exp.BizExp;
 import cn.hutool.core.text.CharSequenceUtil;
 
 import java.io.Serializable;
 
 /**
+ * 基本结果
+ *
  * @author: guofangbi
- * @date: 2022/5/24-16:25
+ * @date: 2022-05-24 23:00:00
  * @version: 1.0.0
  */
 public class BaseResult<T extends Serializable> implements Serializable {
@@ -23,7 +24,7 @@ public class BaseResult<T extends Serializable> implements Serializable {
         if (CharSequenceUtil.equals(code, CommError.SUCCESS.getCode())) {
             return value;
         }
-        throw BizExp.throwExp(baseError, errMsg);
+        throw BizExp.throwExp(code, errMsg);
     }
 
     public String getCode() {

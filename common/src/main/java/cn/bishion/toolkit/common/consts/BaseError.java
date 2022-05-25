@@ -21,7 +21,7 @@ public interface BaseError {
     String getCode();
 
     /**
-     * 错误信息
+     * 错误信息模板
      *
      * @return {@link String}
      */

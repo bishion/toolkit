@@ -1,7 +1,7 @@
 package cn.bishion.toolkit.common.util;
 
 import cn.bishion.toolkit.common.consts.CommError;
-import cn.bishion.toolkit.common.exp.BizExp;
+import cn.bishion.toolkit.common.dto.BizExp;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;

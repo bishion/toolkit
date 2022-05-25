@@ -1,8 +1,10 @@
 package cn.bishion.toolkit.common.consts;
 
 /**
+ * 通用错误
+ *
  * @author: guofangbi
- * @date: 2022/5/24-16:43
+ * @date: 2022-05-24 23:00:08
  * @version: 1.0.0
  */
 public enum CommError implements BaseError {

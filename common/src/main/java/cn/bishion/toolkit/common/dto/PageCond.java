@@ -6,7 +6,7 @@ import java.io.Serializable;
  * 页面条件
  *
  * @author: guofangbi
- * @date: 2022-05-24 21:16:76
+ * @date: 2022-05-24 23:00:76
  * @version: 1.0.0
  */
 public class PageCond implements Serializable {

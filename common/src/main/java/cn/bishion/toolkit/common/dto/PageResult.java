@@ -7,7 +7,7 @@ import java.util.List;
  * 基本页面
  *
  * @author: guofangbi
- * @date: 2022-05-24 16:39:84
+ * @date: 2022-05-24 23:01:40
  * @version: 1.0.0
  */
 public class PageResult<T extends Serializable> implements Serializable {
