@@ -19,7 +19,7 @@ public class BaseResult<T extends Serializable> implements Serializable {
     private T value;
     private String traceId;
 
-    public T validAndGet() {
+    public T getValid() {
         if (CharSequenceUtil.equals(code, CommError.SUCCESS.getCode())) {
             return value;
         }
