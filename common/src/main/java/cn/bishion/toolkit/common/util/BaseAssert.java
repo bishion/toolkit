@@ -1,7 +1,7 @@
 package cn.bishion.toolkit.common.util;
 
 import cn.bishion.toolkit.common.consts.CommError;
-import cn.bishion.toolkit.common.dto.BizExp;
+import cn.bishion.toolkit.common.dto.BizException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;
@@ -21,14 +21,14 @@ public class BaseAssert {
     public static void isTrue(boolean expression, Object... params) {
         if (!expression) {
             log.warn(CommError.DATA_ILLEGAL.getErrorMsg(params));
-            throw BizExp.throwExp(CommError.DATA_ILLEGAL, params);
+            throw BizException.throwExp(CommError.DATA_ILLEGAL, params);
         }
     }
 
     public static void nonNull(Object obj, Object... params) {
         if (Objects.isNull(obj)) {
             log.warn(CommError.DATA_IS_NULL.getErrorMsg(params));
-            throw BizExp.throwExp(CommError.DATA_IS_NULL, params);
+            throw BizException.throwExp(CommError.DATA_IS_NULL, params);
         }
     }
 

@@ -9,27 +9,35 @@ import cn.bishion.toolkit.common.consts.BaseError;
  * @date: 2022-05-24 23:01:52
  * @version: 1.0.0
  */
-public class BizExp extends RuntimeException {
+public class BizException extends RuntimeException {
     private static final long serialVersionUID = 4090231776804948548L;
     private final String code;
     private final String msg;
 
-    private BizExp(BaseError baseError, Object... param) {
+    private BizException(BaseError baseError, Object... param) {
         this.code = baseError.getCode();
         this.msg = baseError.getErrorMsg(param);
     }
 
-    private BizExp(String code, String msg) {
+    private BizException(String code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
-    public static BizExp throwExp(BaseError baseError, Object... param) {
-        return new BizExp(baseError, param);
+    public static BizException throwExp(BaseError baseError, Object... param) {
+        return new BizException(baseError, param);
     }
 
-    static BizExp throwExp(String code, String msg) {
-        return new BizExp(code, msg);
+    /**
+     * 抛出异常
+     * 该方法只给baseResult
+     *
+     * @param code 代码
+     * @param msg  信息
+     * @return {@link BizException}
+     */
+    static BizException throwExp(String code, String msg) {
+        return new BizException(code, msg);
     }
 
     public String getCode() {
