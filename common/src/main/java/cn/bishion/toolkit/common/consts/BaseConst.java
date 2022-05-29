@@ -1,7 +1,5 @@
 package cn.bishion.toolkit.common.consts;
 
-import java.util.Date;
-
 /**
  * 基本常量
  *
@@ -149,43 +147,9 @@ public class BaseConst {
     public static final String ERROR = "ERROR";
 
     /**
-     * HTTP头-应用名
-     */
-    public static final String HEAD_APP = "hd_app_name";
-    /**
-     * HTTP头-来源应用
-     */
-    public static final String HEAD_SOURCE_APP = "hd_source_app";
-    /**
-     * HTTP头-密钥
-     */
-    public static final String HEAD_KEY = "hd_app_key";
-    /**
-     * HTTP头-操作人
-     */
-    public static final String HEAD_OPT = "hd_operator";
-
-    /**
-     * HTTP头-标记
-     */
-    public static final String HEAD_TOKEN = "hd-token";
-    /**
-     * HTTP头-渠道
-     */
-    public static final String HEAD_CHANNEL = "hd-channel";
-
-    /**
-     * 9999-12-31 23:59:59
-     */
-    public static final Date FOREVER_TIME = new Date(253402271999000L);
-    /**
      * 9999-12-31 23:59:59
      */
     public static final String FOREVER_TIME_STR = "9999-12-31 23:59:59";
-    /**
-     * 9999-12-31
-     */
-    public static final Date FOREVER_DATE = new Date(253402185600000L);
     /**
      * 9999-12-31
      */

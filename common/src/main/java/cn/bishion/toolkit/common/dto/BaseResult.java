@@ -1,5 +1,6 @@
 package cn.bishion.toolkit.common.dto;
 
+import cn.bishion.toolkit.common.consts.BaseError;
 import cn.bishion.toolkit.common.consts.CommError;
 import cn.hutool.core.text.CharSequenceUtil;
 
@@ -19,11 +20,21 @@ public class BaseResult<T extends Serializable> implements Serializable {
     private T value;
     private String traceId;
 
+    private BaseResult(String code, String errMsg) {
+        this.code = code;
+        this.errMsg = errMsg;
+    }
+
     public T getValid() {
         if (CharSequenceUtil.equals(code, CommError.SUCCESS.getCode())) {
             return value;
         }
         throw BizException.throwExp(code, errMsg);
+    }
+
+    public static <T extends Serializable> BaseResult<T> fail(BaseError error, Object... param) {
+        return new BaseResult<>(error.getCode(), error.getErrorMsg(param));
+
     }
 
     public String getCode() {
