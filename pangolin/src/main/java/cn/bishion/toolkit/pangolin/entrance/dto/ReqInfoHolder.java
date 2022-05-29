@@ -1,5 +1,7 @@
 package cn.bishion.toolkit.pangolin.entrance.dto;
 
+import com.alibaba.ttl.TransmittableThreadLocal;
+
 /**
  * @author: guofangbi
  * @date: 2022/5/28-9:42
@@ -10,7 +12,7 @@ public class ReqInfoHolder {
 
     }
 
-    private static final ThreadLocal<BaseReqInfo> reqInfo = new ThreadLocal<>();
+    private static final TransmittableThreadLocal<BaseReqInfo> reqInfo = new TransmittableThreadLocal<>();
 
     public static void setReqInfo(BaseReqInfo baseReqInfo) {
         reqInfo.set(baseReqInfo);
@@ -23,4 +25,5 @@ public class ReqInfoHolder {
     public static void removeOptInfo() {
         reqInfo.remove();
     }
+
 }
