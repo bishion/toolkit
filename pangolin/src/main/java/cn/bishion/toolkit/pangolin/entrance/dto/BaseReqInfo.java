@@ -19,6 +19,7 @@ import java.io.Serializable;
 public class BaseReqInfo implements Serializable {
     private static final long serialVersionUID = 552409411497966569L;
     private String operator;
+    private String operatorName;
     private String fromApp;
     private String source;
 
@@ -26,5 +27,6 @@ public class BaseReqInfo implements Serializable {
     private String token;
     private String openId;
     private boolean noLogin;
+    private String noLoginFlag;
 
 }

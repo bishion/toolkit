@@ -28,7 +28,12 @@ public class PangolinConst {
     /**
      * HTTP头-操作人
      */
-    public static final String OPT_NO_LOGIN = "_no_login";
+    public static final String HEAD_OPT_NAME = "hd_operator_name";
+    /**
+     * HTTP头-游客标记
+     * 为Y表示未登录，N表示已登录
+     */
+    public static final String HEAD_NO_LOGIN = "hd_no_login";
 
     /**
      * HTTP头-标记

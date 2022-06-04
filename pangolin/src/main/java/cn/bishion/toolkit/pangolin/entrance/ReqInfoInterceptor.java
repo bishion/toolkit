@@ -1,5 +1,6 @@
 package cn.bishion.toolkit.pangolin.entrance;
 
+import cn.bishion.toolkit.common.consts.BaseConst;
 import cn.bishion.toolkit.common.consts.BaseError;
 import cn.bishion.toolkit.common.dto.BaseResult;
 import cn.bishion.toolkit.pangolin.consts.PangolinConst;
@@ -39,6 +40,8 @@ public class ReqInfoInterceptor implements HandlerInterceptor {
         String channel = request.getHeader(PangolinConst.HEAD_CHANNEL);
         String token = request.getHeader(PangolinConst.HEAD_TOKEN);
         String openId = request.getHeader(PangolinConst.HEAD_OPEN_ID);
+        String operatorName = request.getHeader(PangolinConst.HEAD_OPT_NAME);
+        String noLoginFlag = request.getHeader(PangolinConst.HEAD_NO_LOGIN);
 
         if (CharSequenceUtil.hasBlank(fromApp, source, fromKey, channel)) {
             log.warn("通用请求信息缺失. {},{},{},{},{}", fromApp, source, fromKey, channel, operator);
@@ -52,8 +55,9 @@ public class ReqInfoInterceptor implements HandlerInterceptor {
             return buildFailResult(response, PangolinError.REQ_KEY_VALID);
         }
         BaseReqInfo baseReqInfo = BaseReqInfo.builder().channel(channel).fromApp(fromApp).
-                operator(operator).source(source).openId(openId).token(token)
-                .noLogin(CharSequenceUtil.equals(operator, PangolinConst.OPT_NO_LOGIN))
+                operator(operator).operatorName(operatorName).source(source).openId(openId).token(token)
+                .noLogin(CharSequenceUtil.equals(BaseConst.YES, noLoginFlag))
+                .noLoginFlag(noLoginFlag)
                 .build();
         ReqInfoHolder.setReqInfo(baseReqInfo);
 
