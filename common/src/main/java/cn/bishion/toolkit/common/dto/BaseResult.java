@@ -25,15 +25,19 @@ public class BaseResult<T extends Serializable> implements Serializable {
         this.errMsg = errMsg;
     }
 
+    public boolean success() {
+        return CharSequenceUtil.equals(code, CommError.SUCCESS.getCode());
+    }
+
     public T getValid() {
-        if (CharSequenceUtil.equals(code, CommError.SUCCESS.getCode())) {
+        if (success()) {
             return value;
         }
         throw BizException.throwExp(code, errMsg);
     }
 
     public static <T extends Serializable> BaseResult<T> fail(BaseError error, Object... param) {
-        return new BaseResult<>(error.getCode(), error.getErrorMsg(param));
+        return new BaseResult<>(error.getCode(), error.getMsg(param));
 
     }
 

@@ -1,8 +1,9 @@
 package cn.bishion.toolkit.common.util;
 
 import cn.bishion.toolkit.common.consts.BaseError;
-import cn.bishion.toolkit.common.consts.CommError;
 import cn.bishion.toolkit.common.dto.BizException;
+import cn.hutool.core.text.CharSequenceUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 
 import java.util.Objects;
@@ -14,6 +15,7 @@ import java.util.Objects;
  * @date: 2022-05-24 18:06:98
  * @version: 1.0.0
  */
+@Slf4j
 public class BaseAssert {
     private BaseAssert() {
     }
@@ -21,20 +23,28 @@ public class BaseAssert {
     public static void isTrue(boolean expression, Logger log,
                               BaseError error, Object... params) {
         if (!expression) {
-            log.warn(error.getErrorMsg(params));
-            throw BizException.throwExp(CommError.DATA_ILLEGAL, params);
-        }
-    }
-
-    public static void nonNull(Object obj, Logger log, BaseError error, Object... params) {
-        if (Objects.isNull(obj)) {
-            log.warn(error.getErrorMsg(params));
+            log.warn(error.getMsg(params));
             throw BizException.throwExp(error, params);
         }
     }
 
-    public static <T> T getNonNull(T value, Logger log, BaseError error, Object... params) {
-        nonNull(value, log, error, params);
+    public static void nonNull(Object obj, BaseError error, Object... params) {
+        if (Objects.isNull(obj)) {
+            log.warn(error.getMsg(params));
+            throw BizException.throwExp(error, params);
+        }
+    }
+
+    public static void notBlank(String value, BaseError error, Object... params) {
+        if (CharSequenceUtil.isBlank(value)) {
+            log.warn(error.getMsg(params));
+            throw BizException.throwExp(error, params);
+        }
+    }
+
+
+    public static <T> T getNonNull(T value, BaseError error, Object... params) {
+        nonNull(value, error, params);
         return value;
     }
 }

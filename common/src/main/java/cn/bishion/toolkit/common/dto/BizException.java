@@ -1,5 +1,6 @@
 package cn.bishion.toolkit.common.dto;
 
+import cn.bishion.toolkit.common.consts.BaseConst;
 import cn.bishion.toolkit.common.consts.BaseError;
 
 /**
@@ -15,11 +16,11 @@ public class BizException extends RuntimeException {
     private final String msg;
 
     private BizException(BaseError baseError, Object... param) {
-        this.code = baseError.getCode();
-        this.msg = baseError.getErrorMsg(param);
+        this(baseError.getCode(), baseError.getMsg(param));
     }
 
     private BizException(String code, String msg) {
+        super(code + BaseConst.COLON + msg);
         this.code = code;
         this.msg = msg;
     }

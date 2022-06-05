@@ -1,8 +1,8 @@
 package cn.bishion.toolkit.pangolin.exit;
 
+import cn.bishion.toolkit.common.dto.BaseReqInfo;
+import cn.bishion.toolkit.common.dto.ReqInfoHolder;
 import cn.bishion.toolkit.pangolin.consts.PangolinConst;
-import cn.bishion.toolkit.pangolin.entrance.dto.BaseReqInfo;
-import cn.bishion.toolkit.pangolin.entrance.dto.ReqInfoHolder;
 import cn.hutool.crypto.SecureUtil;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

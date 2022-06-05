@@ -33,7 +33,7 @@ public interface BaseError {
      * @param params 参数个数
      * @return {@link String}
      */
-    default String getErrorMsg(Object... params) {
+    default String getMsg(Object... params) {
         if (Objects.isNull(params)) {
             params = EMPTY_ARR;
         }

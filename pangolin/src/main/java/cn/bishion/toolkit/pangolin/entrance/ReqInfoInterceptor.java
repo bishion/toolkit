@@ -2,11 +2,11 @@ package cn.bishion.toolkit.pangolin.entrance;
 
 import cn.bishion.toolkit.common.consts.BaseConst;
 import cn.bishion.toolkit.common.consts.BaseError;
+import cn.bishion.toolkit.common.dto.BaseReqInfo;
 import cn.bishion.toolkit.common.dto.BaseResult;
+import cn.bishion.toolkit.common.dto.ReqInfoHolder;
 import cn.bishion.toolkit.pangolin.consts.PangolinConst;
 import cn.bishion.toolkit.pangolin.consts.PangolinError;
-import cn.bishion.toolkit.pangolin.entrance.dto.BaseReqInfo;
-import cn.bishion.toolkit.pangolin.entrance.dto.ReqInfoHolder;
 import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.crypto.SecureUtil;

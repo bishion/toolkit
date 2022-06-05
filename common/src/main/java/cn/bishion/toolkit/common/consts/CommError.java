@@ -13,9 +13,6 @@ public enum CommError implements BaseError {
      * 成功
      */
     SUCCESS("0", "成功"),
-
-    DATA_ILLEGAL("1001", "数据校验失败.{0}"),
-    DATA_IS_NULL("1002", "数据为空.{0}"),
     ;
 
     private String code;
@@ -37,7 +34,7 @@ public enum CommError implements BaseError {
     }
 
     @Override
-    public String getErrorMsg(Object... param) {
+    public String getMsg(Object... param) {
         return null;
     }
 

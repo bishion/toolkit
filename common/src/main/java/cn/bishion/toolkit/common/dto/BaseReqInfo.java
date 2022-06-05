@@ -1,4 +1,4 @@
-package cn.bishion.toolkit.pangolin.entrance.dto;
+package cn.bishion.toolkit.common.dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -28,5 +28,6 @@ public class BaseReqInfo implements Serializable {
     private String openId;
     private boolean noLogin;
     private String noLoginFlag;
+    private String clientIp;
 
 }

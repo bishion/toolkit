@@ -1,4 +1,4 @@
-package cn.bishion.toolkit.pangolin.entrance.dto;
+package cn.bishion.toolkit.common.dto;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
 
