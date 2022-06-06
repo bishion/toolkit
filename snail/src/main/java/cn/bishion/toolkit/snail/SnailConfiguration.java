@@ -3,7 +3,9 @@ package cn.bishion.toolkit.snail;
 import cn.bishion.toolkit.snail.aspect.StampAspect;
 import cn.bishion.toolkit.snail.service.*;
 import cn.bishion.toolkit.snail.service.impl.*;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.expression.BeanFactoryResolver;
 
 /**
  * @author: guofangbi
@@ -32,8 +34,8 @@ public class SnailConfiguration {
     }
 
     @Bean
-    public ActionParser spelActionParser() {
-        return new SpelActionParser();
+    public ActionParser spelActionParser(BeanFactory beanFactory) {
+        return new SpelActionParser(new BeanFactoryResolver(beanFactory));
     }
 
     @Bean

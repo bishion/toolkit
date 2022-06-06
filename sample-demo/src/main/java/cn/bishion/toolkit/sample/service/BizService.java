@@ -4,6 +4,7 @@ import cn.bishion.toolkit.sample.remote.BingRemote;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 
 /**
  * @author: guofangbi
@@ -17,5 +18,14 @@ public class BizService {
 
     public String searchBing() {
         return bingRemote.search("test");
+    }
+
+    public String searchBing(String q) {
+        return bingRemote.search(q);
+    }
+
+
+    public String searchBing(Object[] q) {
+        return Arrays.toString(q);
     }
 }
