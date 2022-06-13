@@ -59,6 +59,10 @@ public class StampTrack {
      * 参数
      */
     private String param;
+    /**
+     * 参数
+     */
+    private String bizNo;
     //////////////////// 执行信息 ///////////////////////
 
     /**

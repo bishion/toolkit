@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Stamp {
     String DEFAULT_ACTION_PARSER = "defaultActionParser";
-    String SPEL_ACTION_PARSER = "spelActionParser";
+    String SPEL_ACTION_PARSER = "spelDefaultParser";
     String DEFAULT_CLOSEOUT = "defaultCloseoutService";
     String DEFAULT_PARAM_PARSER = "defaultParamParser";
 
@@ -24,6 +24,8 @@ public @interface Stamp {
      * @return {@link String}
      */
     String module();
+
+    String bizNo();
 
     /**
      * 操作

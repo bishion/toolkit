@@ -13,6 +13,7 @@ public enum SnailError implements BaseError {
      */
     ACTION_PARSER_NAME_WRONG("TRK001", "未找到操作描述解析器.{0}"),
     PARAM_PARSER_NAME_WRONG("TRK002", "未找到参数解析器.{0}"),
+    SPEL_PARSE_FAIL("TRK102", "SPEL解析失败.{0}"),
     ;
 
     private String code;

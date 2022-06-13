@@ -14,7 +14,7 @@ import org.springframework.context.expression.BeanFactoryResolver;
  */
 public class SnailConfiguration {
     @Bean
-    public ActionParser defaultActionParser() {
+    public SnailSpelParser defaultActionParser() {
         return new DefaultActionParser();
     }
 
@@ -34,8 +34,13 @@ public class SnailConfiguration {
     }
 
     @Bean
-    public ActionParser spelActionParser(BeanFactory beanFactory) {
-        return new SpelActionParser(new BeanFactoryResolver(beanFactory));
+    public SnailSpelParser spelDefaultParser() {
+        return new SpelDefaultParser();
+    }
+
+    @Bean
+    public SpelParseService spelParserService(BeanFactory beanFactory) {
+        return new SpelParseService(new BeanFactoryResolver(beanFactory));
     }
 
     @Bean

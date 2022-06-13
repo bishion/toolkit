@@ -50,7 +50,7 @@ public class StampAspect {
                 builder.success(BaseConst.SUCCESS);
             }
             builder.response(CharSequenceUtil.subPre(response, maxRespLen));
-
+            buildStampTrackService.buildReqAndResp(builder, stamp, args, response);
             return result;
         } catch (Exception e) {
             builder.success(BaseConst.FAILURE).response(CharSequenceUtil.subPre(e.getMessage(), maxRespLen));

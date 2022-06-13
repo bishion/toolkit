@@ -23,13 +23,13 @@ public class BizController {
     @Resource
     private SpelService spelService;
 
-    @Stamp(action = "test", actionType = "test", module = "sdd")
+    @Stamp(action = "test", bizNo = "#req", actionType = "test", module = "sdd")
     @RequestMapping("/remote")
     public String remote() {
         return bizService.searchBing();
     }
 
-    @Stamp(action = "#req", actionType = "test", module = "sdd", actionParser = Stamp.SPEL_ACTION_PARSER)
+    @Stamp(action = "#req", bizNo = "#req", actionType = "test", module = "sdd", actionParser = Stamp.SPEL_ACTION_PARSER)
     @PostMapping(value = "/spel")
     public String spel(@RequestParam("text") String text) {
         BaseReqInfo[] reqInfos = new BaseReqInfo[]{BaseReqInfo.builder().build(), BaseReqInfo.builder().build()};
