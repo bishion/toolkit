@@ -32,8 +32,9 @@ public class FillReqInfo4FeignClientInterceptor implements RequestInterceptor {
                     SecureUtil.md5(appName + reqInfo.getOperator()));
             template.header(PangolinConst.HEAD_OPEN_ID, reqInfo.getOpenId());
             template.header(PangolinConst.HEAD_OPT, reqInfo.getOperator());
-            template.header(PangolinConst.HEAD_SOURCE, reqInfo.getSource());
+            template.header(PangolinConst.HEAD_SOURCE, reqInfo.getSourceApp());
             template.header(PangolinConst.HEAD_TOKEN, reqInfo.getToken());
+            template.header(PangolinConst.HEAD_CLIENT_IP, reqInfo.getClientIp());
         }
     }
 }

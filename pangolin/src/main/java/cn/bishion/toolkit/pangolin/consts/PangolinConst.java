@@ -18,6 +18,10 @@ public class PangolinConst {
      */
     public static final String HEAD_SOURCE = "hd_source";
     /**
+     * HTTP头-用户端IP
+     */
+    public static final String HEAD_CLIENT_IP = "hd_client_ip";
+    /**
      * HTTP头-密钥
      */
     public static final String HEAD_FROM_KEY = "hd_from_key";

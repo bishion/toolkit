@@ -42,6 +42,7 @@ public class ReqInfoInterceptor implements HandlerInterceptor {
         String openId = request.getHeader(PangolinConst.HEAD_OPEN_ID);
         String operatorName = request.getHeader(PangolinConst.HEAD_OPT_NAME);
         String noLoginFlag = request.getHeader(PangolinConst.HEAD_NO_LOGIN);
+        String clientIp = request.getHeader(PangolinConst.HEAD_CLIENT_IP);
 
         if (CharSequenceUtil.hasBlank(fromApp, source, fromKey, channel)) {
             log.warn("通用请求信息缺失. {},{},{},{},{}", fromApp, source, fromKey, channel, operator);
@@ -55,9 +56,9 @@ public class ReqInfoInterceptor implements HandlerInterceptor {
             return buildFailResult(response, PangolinError.REQ_KEY_VALID);
         }
         BaseReqInfo baseReqInfo = BaseReqInfo.builder().channel(channel).fromApp(fromApp).
-                operator(operator).operatorName(operatorName).source(source).openId(openId).token(token)
+                operator(operator).operatorName(operatorName).sourceApp(source).openId(openId).token(token)
                 .noLogin(CharSequenceUtil.equals(BaseConst.YES, noLoginFlag))
-                .noLoginFlag(noLoginFlag)
+                .noLoginFlag(noLoginFlag).clientIp(clientIp)
                 .build();
         ReqInfoHolder.setReqInfo(baseReqInfo);
 
