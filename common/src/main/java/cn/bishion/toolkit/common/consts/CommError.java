@@ -33,9 +33,5 @@ public enum CommError implements BaseError {
         return code;
     }
 
-    @Override
-    public String getMsg(Object... param) {
-        return null;
-    }
 
 }

@@ -4,7 +4,6 @@ import cn.bishion.toolkit.common.consts.BaseError;
 import cn.bishion.toolkit.common.dto.BizException;
 import cn.hutool.core.text.CharSequenceUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 
 import java.util.Objects;
 
@@ -20,8 +19,7 @@ public class BaseAssert {
     private BaseAssert() {
     }
 
-    public static void isTrue(boolean expression, Logger log,
-                              BaseError error, Object... params) {
+    public static void isTrue(boolean expression, BaseError error, Object... params) {
         if (!expression) {
             log.warn(error.getMsg(params));
             throw BizException.throwExp(error, params);

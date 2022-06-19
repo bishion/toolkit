@@ -21,7 +21,7 @@ public class BaseReqInfo implements Serializable {
     private String operator;
     private String operatorName;
     private String fromApp;
-    private String source;
+    private String sourceApp;
 
     private String channel;
     private String token;
