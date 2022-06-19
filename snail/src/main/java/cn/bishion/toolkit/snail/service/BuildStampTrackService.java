@@ -33,8 +33,7 @@ public class BuildStampTrackService {
     public StampTrack.StampTrackBuilder createStampTrackBuilder(Stamp stamp, Object[] params) {
         StampTrack.StampTrackBuilder builder = StampTrack.builder();
 
-        builder.appName(appName).hostIp(EnvUtil.HOST_IP).hostName(EnvUtil.LOCAL_HOSTNAME)
-                .actionType(stamp.actionType());
+        builder.appName(appName).hostIp(EnvUtil.HOST_IP).hostName(EnvUtil.LOCAL_HOSTNAME);
         builder.module(stamp.module()).actionType(stamp.actionType());
 
         buildBaseReqInfo(builder);
@@ -52,9 +51,6 @@ public class BuildStampTrackService {
 
     public void buildParam(StampTrack.StampTrackBuilder builder,
                            Stamp stamp, Object[] params) {
-        SnailSpelParser snailSpelParser = actionParserMap.get(stamp.actionParser());
-        BaseAssert.nonNull(snailSpelParser, SnailError.ACTION_PARSER_NAME_WRONG, stamp.actionParser());
-
         ParamParser paramParser = paramParserMap.get(stamp.paramParser());
         BaseAssert.nonNull(paramParser, SnailError.ACTION_PARSER_NAME_WRONG, stamp.actionParser());
 
