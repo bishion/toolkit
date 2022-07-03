@@ -6,7 +6,6 @@ import cn.bishion.toolkit.common.dto.BaseReqInfo;
 import cn.bishion.toolkit.common.dto.BaseResult;
 import cn.bishion.toolkit.common.dto.ReqInfoHolder;
 import cn.bishion.toolkit.pangolin.consts.PangolinConst;
-import cn.bishion.toolkit.pangolin.consts.PangolinError;
 import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.crypto.SecureUtil;
@@ -47,13 +46,13 @@ public class ReqInfoInterceptor implements HandlerInterceptor {
         if (CharSequenceUtil.hasBlank(fromApp, source, fromKey, channel)) {
             log.warn("通用请求信息缺失. {},{},{},{},{}", fromApp, source, fromKey, channel, operator);
 
-            return buildFailResult(response, PangolinError.REQ_PARAM_VALID);
+//            return buildFailResult(response, PangolinError.REQ_PARAM_VALID);
         }
 
         // 这里可以校验key
         if (!CharSequenceUtil.equals(SecureUtil.md5(fromApp + operator), fromKey)) {
             log.warn("通用请求安全校验失败. from:{},opt:{},key:{}", fromApp, operator, fromKey);
-            return buildFailResult(response, PangolinError.REQ_KEY_VALID);
+//            return buildFailResult(response, PangolinError.REQ_KEY_VALID);
         }
         BaseReqInfo baseReqInfo = BaseReqInfo.builder().channel(channel).fromApp(fromApp).
                 operator(operator).operatorName(operatorName).sourceApp(source).openId(openId).token(token)

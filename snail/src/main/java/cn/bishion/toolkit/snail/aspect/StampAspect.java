@@ -44,7 +44,7 @@ public class StampAspect {
         try {
             Object result = joinPoint.proceed();
             String response = Objects.isNull(result) ? null : result.toString();
-            if (result instanceof BaseResult && !((BaseResult<?>) result).success()) {
+            if (result instanceof BaseResult && !((BaseResult<?>) result).valid()) {
                 builder.success(BaseConst.FAILURE);
             } else {
                 builder.success(BaseConst.SUCCESS);

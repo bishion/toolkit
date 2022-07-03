@@ -25,7 +25,6 @@ public class SpelService {
         ExpressionParser parser = new SpelExpressionParser();
         StandardEvaluationContext context = new StandardEvaluationContext();
         context.setBeanResolver(new BeanFactoryResolver(beanFactory));
-        context.setVariable("test", "sssss");
         if (ArrayUtil.length(param) == 1) {
             context.setVariable("req", param[0]);
         } else {

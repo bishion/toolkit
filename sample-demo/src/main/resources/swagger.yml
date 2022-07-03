@@ -1,0 +1,5 @@
+swagger:
+  basePackage: cn.bishion.toolkit.sample.web
+  title: 示例项目
+  description: 示例项目接口文档
+  version: 1.0.1

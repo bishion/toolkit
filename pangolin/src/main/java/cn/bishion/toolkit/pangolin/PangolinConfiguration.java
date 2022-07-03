@@ -27,7 +27,7 @@ public class PangolinConfiguration implements WebMvcConfigurer {
     @Value("${toolkit.pangolin.feign.logLength:1024}")
     private Integer maxLength;
 
-    @Value("${toolkit.pangolin.exclude-path:/heath,/doc.html,/prometheus,/webjars/*,/swagger-resources,/v2/api-docs}")
+    @Value("${toolkit.pangolin.exclude-path:/*,/webjars/*,/*/api-docs}")
     private List<String> excludePathPatterns;
 
     @Bean
