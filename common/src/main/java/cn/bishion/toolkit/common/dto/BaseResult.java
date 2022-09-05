@@ -50,9 +50,10 @@ public class BaseResult<T> implements Serializable {
         return result;
     }
 
-    public static <T extends Serializable> BaseResult<T> success(T value) {
+    public static <T> BaseResult<T> success(T value) {
         BaseResult<T> result = new BaseResult<>();
         result.setValue(value);
+        result.setCode(CommError.SUCCESS.getCode());
         return result;
     }
 
