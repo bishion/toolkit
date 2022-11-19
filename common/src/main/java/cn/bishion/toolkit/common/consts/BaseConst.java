@@ -20,6 +20,14 @@ public class BaseConst {
      */
     public static final String NO = "N";
     /**
+     * 字符 0
+     */
+    public static final String VALID = "0";
+    /**
+     * 字符 1
+     */
+    public static final String INVALID = "1";
+    /**
      * 数字 0
      */
     public static final Integer INT_0 = 0;
@@ -63,6 +71,14 @@ public class BaseConst {
      * int 10
      */
     public static final Integer INT_10 = 10;
+    /**
+     * int 12
+     */
+    public static final Integer INT_12 = 12;
+    /**
+     * int 15
+     */
+    public static final Integer INT_15 = 15;
     /**
      * int 30
      */
