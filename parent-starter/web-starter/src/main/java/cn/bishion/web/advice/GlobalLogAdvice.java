@@ -42,8 +42,7 @@ public class GlobalLogAdvice {
     @Value("${toolkit.log.length:1024}")
     private Integer maxLength;
 
-    @Pointcut("@within(org.springframework.web.bind.annotation.RestController) " +
-            "&& !execution(* com..HealthController.*(..))")
+    @Pointcut("@within(org.springframework.web.bind.annotation.RestController) && !execution(* cn..HealthController.*(..))")
     public void pointCut() {
     }
 

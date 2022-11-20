@@ -1,7 +1,7 @@
 package cn.bishion.web.advice;
 
 import cn.bishion.toolkit.common.dto.BaseResult;
-import org.slf4j.MDC;
+import cn.bishion.toolkit.common.util.JsonUtil;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;
@@ -13,15 +13,21 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 public class GlobalResponseAdvice implements ResponseBodyAdvice {
 
     @Override
-    public boolean supports(MethodParameter returnType, Class converterType) {
+    public boolean supports(MethodParameter methodParameter, Class converterType) {
 
         return true;
     }
 
     @Override
-    public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType mediaType,
+    public Object beforeBodyWrite(Object body, MethodParameter methodParameter, MediaType mediaType,
                                   Class selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
 
-        return body instanceof BaseResult ? body : BaseResult.success(body);
+        if ("/health".equals(request.getURI().getPath())) {
+            return body;
+        }
+        if (body instanceof String) {
+            return JsonUtil.toStr(BaseResult.success(body));
+        }
+        return BaseResult.success(body);
     }
 }

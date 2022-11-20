@@ -6,12 +6,16 @@ import cn.bishion.web.advice.GlobalResponseAdvice;
 import cn.bishion.web.health.HealthController;
 import cn.bishion.web.monitor.RequestMonitorService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Import({GlobalExceptionAdvice.class, GlobalLogAdvice.class, GlobalResponseAdvice.class,
         HealthController.class})
-
-public class WebConfiguration {
+@Configuration
+public class WebConfiguration implements WebMvcConfigurer {
+    @Bean
     @ConditionalOnMissingBean(RequestMonitorService.class)
     public RequestMonitorService requestMonitorService() {
         // 默认不打印请求日志监控

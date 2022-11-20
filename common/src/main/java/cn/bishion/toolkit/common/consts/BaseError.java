@@ -11,7 +11,7 @@ import java.util.Objects;
  * @version: 1.0.0
  */
 public interface BaseError {
-    String[] EMPTY_ARR = new String[0];
+    Object[] EMPTY_ARR = new String[]{BaseConst.EMPTY};
 
     /**
      * 错误代码

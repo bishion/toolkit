@@ -18,7 +18,7 @@ public abstract class BaseEntity {
      * 版本标识
      */
     @Version
-    @TableField(value = "creator",fill = FieldFill.INSERT)
+    @TableField(value = "version",fill = FieldFill.INSERT)
     private Integer           version;
 
     /**
