@@ -10,6 +10,7 @@
     <modules>
         <module>mybatis-starter</module>
         <module>swagger-starter</module>
+        <module>web-starter</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

@@ -137,6 +137,10 @@ public class BaseConst {
      */
     public static final String UNDERSCORE = "_";
     /**
+     * 斜线
+     */
+    public static final String SLASH = "/";
+    /**
      * 分隔符
      */
     public static final String SEPARATOR = System.lineSeparator();

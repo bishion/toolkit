@@ -2,6 +2,7 @@ package cn.bishion.toolkit.common.util;
 
 import cn.bishion.toolkit.common.consts.BaseConst;
 import cn.hutool.core.net.NetUtil;
+import cn.hutool.core.util.RandomUtil;
 import org.apache.commons.lang3.StringUtils;
 
 /**

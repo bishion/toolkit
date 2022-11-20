@@ -1,7 +1,7 @@
 package cn.bishion.toolkit.common.dto;
 
 import cn.bishion.toolkit.common.consts.BaseError;
-import cn.bishion.toolkit.common.consts.CommError;
+import cn.bishion.toolkit.common.consts.Success;
 import cn.hutool.core.text.CharSequenceUtil;
 
 import java.io.Serializable;
@@ -18,9 +18,8 @@ public class BaseResult<T> implements Serializable {
     private String code;
     private String errMsg;
     private T value;
-    private String traceId;
 
-    private BaseResult(String code, String errMsg) {
+    public BaseResult(String code, String errMsg) {
         this.code = code;
         this.errMsg = errMsg;
     }
@@ -29,7 +28,7 @@ public class BaseResult<T> implements Serializable {
     }
 
     public boolean valid() {
-        return CharSequenceUtil.equals(code, CommError.SUCCESS.getCode());
+        return CharSequenceUtil.equals(code, Success.SUCCESS.getCode());
     }
 
     public T takeValid() {
@@ -46,14 +45,14 @@ public class BaseResult<T> implements Serializable {
 
     public static BaseResult<Void> success() {
         BaseResult<Void> result = new BaseResult<>();
-        result.setCode(CommError.SUCCESS.getCode());
+        result.setCode(Success.SUCCESS.getCode());
         return result;
     }
 
     public static <T> BaseResult<T> success(T value) {
         BaseResult<T> result = new BaseResult<>();
         result.setValue(value);
-        result.setCode(CommError.SUCCESS.getCode());
+        result.setCode(Success.SUCCESS.getCode());
         return result;
     }
 
@@ -81,11 +80,4 @@ public class BaseResult<T> implements Serializable {
         this.value = value;
     }
 
-    public String getTraceId() {
-        return traceId;
-    }
-
-    public void setTraceId(String traceId) {
-        this.traceId = traceId;
-    }
 }

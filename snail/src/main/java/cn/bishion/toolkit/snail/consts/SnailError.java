@@ -25,10 +25,11 @@ public enum SnailError implements BaseError {
     }
 
     public String getCode() {
-        return null;
+        return code;
     }
 
     public String getPattern() {
-        return null;
+        return pattern;
     }
+
 }
