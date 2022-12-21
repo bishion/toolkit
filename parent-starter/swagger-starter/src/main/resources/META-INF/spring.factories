@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.github.bishion.swagger.SwaggerConfiguration
+io.github.bishion.swagger.SwaggerConfiguration
 org.springframework.boot.env.EnvironmentPostProcessor=\
-com.github.bishion.swagger.Knife4jEnvPostProcessor
+io.github.bishion.swagger.Knife4jEnvPostProcessor

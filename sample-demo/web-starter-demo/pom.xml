@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <groupId>com.github.bishion/groupId>
+    <groupId>io.github.bishion</groupId>
     <artifactId>web-starter-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
@@ -16,12 +16,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.bishion/groupId>
+            <groupId>io.github.bishion</groupId>
             <artifactId>web-starter</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.github.bishion/groupId>
+            <groupId>io.github.bishion</groupId>
             <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

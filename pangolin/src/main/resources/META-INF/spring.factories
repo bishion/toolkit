@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.github.bishion.pangolin.PangolinConfiguration
+io.github.bishion.pangolin.PangolinConfiguration
