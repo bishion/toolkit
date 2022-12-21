@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>parent-starter</artifactId>
-        <groupId>cn.bishion</groupId>
+        <groupId>com.github.bishion/groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>mybatis-starter</artifactId>
@@ -25,9 +25,19 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.bishion</groupId>
+            <groupId>com.github.bishion/groupId>
             <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+    <distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2308136-release-OUkeA0/</url>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2308136-snapshot-BzigMo/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

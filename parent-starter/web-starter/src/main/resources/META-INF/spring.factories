@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-cn.bishion.web.WebConfiguration
+com.github.bishion.web.WebConfiguration

@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-cn.bishion.toolkit.snail.SnailConfiguration
+com.github.bishion.toolkit.snail.SnailConfiguration

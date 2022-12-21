@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-cn.bishion.toolkit.common.CommConfiguration
+com.github.bishion.common.CommConfiguration
