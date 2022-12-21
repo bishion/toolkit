@@ -7,8 +7,8 @@ import lombok.Setter;
 
 /**
  * @author: guofangbi
- * @date: 2022/6/4-20:27
  * @version: 1.0.0
+ * @since 2022/6/4-20:27
  */
 @Getter
 @Setter

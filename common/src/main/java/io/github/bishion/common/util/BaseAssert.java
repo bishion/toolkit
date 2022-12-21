@@ -11,8 +11,8 @@ import java.util.Objects;
  * 基础断言
  *
  * @author: guofangbi
- * @date: 2022-05-24 18:06:98
  * @version: 1.0.0
+ * @since 2022-05-24 18:06:98
  */
 @Slf4j
 public class BaseAssert {

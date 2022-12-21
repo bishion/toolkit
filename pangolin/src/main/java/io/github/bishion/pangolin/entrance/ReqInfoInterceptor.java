@@ -6,9 +6,7 @@ import cn.hutool.crypto.SecureUtil;
 import cn.hutool.json.JSONUtil;
 import io.github.bishion.common.consts.BaseConst;
 import io.github.bishion.common.consts.BaseError;
-import io.github.bishion.common.dto.BaseReqInfo;
 import io.github.bishion.common.dto.BaseResult;
-import io.github.bishion.common.dto.ReqInfoHolder;
 import io.github.bishion.pangolin.consts.PangolinConst;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -25,7 +23,7 @@ import java.io.IOException;
  * 登录信息拦截器
  *
  * @author: guofangbi
- * @date: 2022-05-28 09:30:30
+ * @since 2022-05-28 09:30:30
  * @version: 1.0.0
  */
 @Slf4j

@@ -12,7 +12,7 @@ import java.util.Properties;
 
 /**
  * @author: guofangbi
- * @date: 2022/7/2-19:27
+ * @since 2022/7/2-19:27
  * @version: 1.0.0
  */
 public class YamlPropertySourceFactory implements PropertySourceFactory {

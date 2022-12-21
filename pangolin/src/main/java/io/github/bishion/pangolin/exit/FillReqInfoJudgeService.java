@@ -6,7 +6,7 @@ import feign.RequestTemplate;
  * 要求事情信息法官服务
  *
  * @author: guofangbi
- * @date: 2022-05-28 19:43:17
+ * @since 2022-05-28 19:43:17
  * @version: 1.0.0
  */
 public interface FillReqInfoJudgeService {

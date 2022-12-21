@@ -6,8 +6,8 @@ import java.io.Serializable;
  * 页面条件
  *
  * @author: guofangbi
- * @date: 2022-05-24 23:00:76
  * @version: 1.0.0
+ * @since 2022-05-24 23:00:76
  */
 public class PageCond implements Serializable {
     private static final long serialVersionUID = 3368920550248941612L;

@@ -4,8 +4,8 @@ package io.github.bishion.common.consts;
  * 通用错误
  *
  * @author: guofangbi
- * @date: 2022-05-24 23:00:08
  * @version: 1.0.0
+ * @since 2022-05-24 23:00:08
  */
 public enum Success implements BaseError {
 

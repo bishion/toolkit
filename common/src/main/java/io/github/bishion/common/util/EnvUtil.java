@@ -6,8 +6,8 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author: guofangbi
- * @date: 2022/6/5-15:46
  * @version: 1.0.0
+ * @since 2022/6/5-15:46
  */
 public class EnvUtil {
     private EnvUtil() {

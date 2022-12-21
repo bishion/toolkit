@@ -4,7 +4,7 @@ import io.github.bishion.common.consts.BaseError;
 
 /**
  * @author: guofangbi
- * @date: 2022/6/4-19:53
+ * @since 2022/6/4-19:53
  * @version: 1.0.0
  */
 public enum SnailError implements BaseError {

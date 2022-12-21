@@ -4,7 +4,7 @@ import io.github.bishion.common.consts.BaseError;
 
 /**
  * @author: guofangbi
- * @date: 2022/5/28-13:09
+ * @since 2022/5/28-13:09
  * @version: 1.0.0
  */
 public enum PangolinError implements BaseError {

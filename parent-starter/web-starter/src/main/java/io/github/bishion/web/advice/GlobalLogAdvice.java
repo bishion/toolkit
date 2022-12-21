@@ -4,7 +4,6 @@ import cn.hutool.core.util.ClassUtil;
 import cn.hutool.core.util.StrUtil;
 import io.github.bishion.common.consts.BaseConst;
 import io.github.bishion.common.dto.BizException;
-import io.github.bishion.common.dto.ReqInfoHolder;
 import io.github.bishion.common.util.JsonUtil;
 import io.github.bishion.web.monitor.RequestMonitorService;
 import org.aspectj.lang.ProceedingJoinPoint;

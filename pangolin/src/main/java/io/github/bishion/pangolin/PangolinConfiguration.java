@@ -19,8 +19,8 @@ import java.util.List;
 
 /**
  * @author: guofangbi
- * @date: 2022/5/28-14:55
  * @version: 1.0.0
+ * @since 2022/5/28-14:55
  */
 
 public class PangolinConfiguration implements WebMvcConfigurer {

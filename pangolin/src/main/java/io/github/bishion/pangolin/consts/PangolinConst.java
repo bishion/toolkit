@@ -2,7 +2,7 @@ package io.github.bishion.pangolin.consts;
 
 /**
  * @author: guofangbi
- * @date: 2022/5/28-11:56
+ * @since 2022/5/28-11:56
  * @version: 1.0.0
  */
 public class PangolinConst {

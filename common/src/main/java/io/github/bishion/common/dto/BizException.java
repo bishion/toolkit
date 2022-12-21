@@ -7,8 +7,8 @@ import io.github.bishion.common.consts.BaseError;
  * 业务异常
  *
  * @author: guofangbi
- * @date: 2022-05-24 23:01:52
  * @version: 1.0.0
+ * @since 2022-05-24 23:01:52
  */
 public class BizException extends RuntimeException {
     private static final long serialVersionUID = 4090231776804948548L;

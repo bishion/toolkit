@@ -6,7 +6,7 @@ import io.github.bishion.toolkit.snail.dto.StampTrack;
  * 收尾服务
  *
  * @author: guofangbi
- * @date: 2022-06-05 21:11:47
+ * @since 2022-06-05 21:11:47
  * @version: 1.0.0
  */
 public interface CloseoutService {

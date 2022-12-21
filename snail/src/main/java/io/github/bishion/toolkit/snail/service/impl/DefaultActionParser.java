@@ -4,7 +4,7 @@ import io.github.bishion.toolkit.snail.service.SnailSpelParser;
 
 /**
  * @author: guofangbi
- * @date: 2022/6/5-11:27
+ * @since 2022/6/5-11:27
  * @version: 1.0.0
  */
 public class DefaultActionParser implements SnailSpelParser {

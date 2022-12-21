@@ -2,7 +2,7 @@ package io.github.bishion.toolkit.snail.service;
 
 /**
  * @author: guofangbi
- * @date: 2022/6/4-20:14
+ * @since 2022/6/4-20:14
  * @version: 1.0.0
  */
 public interface SnailSpelParser {

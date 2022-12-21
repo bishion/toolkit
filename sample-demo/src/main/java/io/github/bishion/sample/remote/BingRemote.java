@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @author: guofangbi
- * @date: 2022/5/28-20:04
+ * @since 2022/5/28-20:04
  * @version: 1.0.0
  */
 @FeignClient(name = "bingRemote", url = "https://cn.bing.com")

@@ -1,11 +1,13 @@
 package io.github.bishion.common.consts;
 
+import java.math.BigDecimal;
+
 /**
  * 基本常量
  *
  * @author: guofangbi
- * @date: 2022-05-24 21:17:71
  * @version: 1.0.0
+ * @since 2022-05-24 21:17:71
  */
 public class BaseConst {
     private BaseConst() {
@@ -79,6 +81,10 @@ public class BaseConst {
      * int 15
      */
     public static final Integer INT_15 = 15;
+    /**
+     * int 20
+     */
+    public static final Integer INT_20 = 20;
     /**
      * int 30
      */
@@ -165,6 +171,10 @@ public class BaseConst {
      * 错误
      */
     public static final String ERROR = "ERROR";
+    /**
+     * 错误
+     */
+    public static final BigDecimal DECIMAL_100 = new BigDecimal(BaseConst.INT_100);
 
     /**
      * 9999-12-31 23:59:59

@@ -8,8 +8,8 @@ import io.github.bishion.common.consts.BaseConst;
  * 雪花
  *
  * @author: guofangbi
- * @date: 2022-05-25 23:08:23
  * @version: 1.0.0
+ * @since 2022-05-25 23:08:23
  */
 enum Snowflake {
     /**

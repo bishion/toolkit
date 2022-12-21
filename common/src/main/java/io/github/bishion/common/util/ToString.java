@@ -10,8 +10,8 @@ import java.util.*;
 
 /**
  * @author: guofangbi
- * @date: 2022/6/5-11:35
  * @version: 1.0.0
+ * @since 2022/6/5-11:35
  */
 public class ToString {
     private ToString() {

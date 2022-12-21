@@ -9,8 +9,8 @@ import org.springframework.context.expression.BeanFactoryResolver;
 
 /**
  * @author: guofangbi
- * @date: 2022/6/5-13:13
  * @version: 1.0.0
+ * @since 2022/6/5-13:13
  */
 public class SnailConfiguration {
     @Bean

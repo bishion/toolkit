@@ -10,7 +10,7 @@ import java.util.Properties;
 
 /**
  * @author: guofangbi
- * @date: 2022/7/3-7:45
+ * @since 2022/7/3-7:45
  * @version: 1.0.0
  */
 public class Knife4jEnvPostProcessor implements EnvironmentPostProcessor {

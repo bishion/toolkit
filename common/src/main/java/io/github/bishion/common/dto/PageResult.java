@@ -10,8 +10,8 @@ import java.util.List;
  * 基本页面
  *
  * @author: guofangbi
- * @date: 2022-05-24 23:01:40
  * @version: 1.0.0
+ * @since 2022-05-24 23:01:40
  */
 public class PageResult<T> implements Serializable {
     private static final long serialVersionUID = 7796860184313107460L;

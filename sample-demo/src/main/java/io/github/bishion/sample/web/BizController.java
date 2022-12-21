@@ -1,6 +1,5 @@
 package io.github.bishion.sample.web;
 
-import io.github.bishion.common.dto.BaseReqInfo;
 import io.github.bishion.sample.service.BizService;
 import io.github.bishion.sample.service.SpelService;
 import io.github.bishion.toolkit.snail.annotation.Stamp;
@@ -13,7 +12,7 @@ import javax.annotation.Resource;
 
 /**
  * @author: guofangbi
- * @date: 2022/5/28-21:30
+ * @since 2022/5/28-21:30
  * @version: 1.0.0
  */
 @RestController

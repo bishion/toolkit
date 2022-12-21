@@ -6,8 +6,8 @@ import io.github.bishion.common.consts.BaseConst;
  * id工具包
  *
  * @author: guofangbi
- * @date: 2022-05-25 23:09:56
  * @version: 1.0.0
+ * @since 2022-05-25 23:09:56
  */
 public class IdUtil {
     private IdUtil() {
@@ -20,8 +20,12 @@ public class IdUtil {
     private static final char[] DIGITS = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q',
             'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '2', '3', '4', '5', '6', '7', '8', '9'};
 
-    public static final String nextStr() {
+    public static final String genStr() {
         return id2Str(Snowflake.SNOWFLAKE.nextId());
+    }
+
+    public static final String genStr(String prefix) {
+        return prefix + id2Str(Snowflake.SNOWFLAKE.nextId());
     }
 
     /**

@@ -3,8 +3,6 @@ package io.github.bishion.pangolin.exit;
 import cn.hutool.crypto.SecureUtil;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import io.github.bishion.common.dto.BaseReqInfo;
-import io.github.bishion.common.dto.ReqInfoHolder;
 import io.github.bishion.pangolin.consts.PangolinConst;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -12,7 +10,7 @@ import javax.annotation.Resource;
 
 /**
  * @author: guofangbi
- * @date: 2022/5/28-15:34
+ * @since 2022/5/28-15:34
  * @version: 1.0.0
  */
 public class FillReqInfo4FeignClientInterceptor implements RequestInterceptor {

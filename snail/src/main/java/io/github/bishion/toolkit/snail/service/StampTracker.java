@@ -4,7 +4,7 @@ import io.github.bishion.toolkit.snail.dto.StampTrack;
 
 /**
  * @author: guofangbi
- * @date: 2022/6/5-11:18
+ * @since 2022/6/5-11:18
  * @version: 1.0.0
  */
 public interface StampTracker {

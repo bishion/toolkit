@@ -7,8 +7,8 @@ import java.util.Objects;
  * 基本错误
  *
  * @author: guofangbi
- * @date: 2022-05-24 16:29:02
  * @version: 1.0.0
+ * @since 2022-05-24 16:29:02
  */
 public interface BaseError {
     Object[] EMPTY_ARR = new String[]{BaseConst.EMPTY};
