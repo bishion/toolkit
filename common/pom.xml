@@ -6,7 +6,7 @@
 
     <groupId>io.github.bishion</groupId>
     <artifactId>common</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <name>common</name>
     <description>common 中存放一些通用工具类, 并为其他模块提供基础</description>
     <url>https://github.com/bishion/toolkit/common</url>
@@ -19,7 +19,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-core</artifactId>
-            <version>5.8.2</version>
+            <version>5.8.10</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -56,7 +56,7 @@
     <developers>
         <developer>
             <name>GuoFangbi</name>
-            <email>loolly@gmail.com</email>
+            <email>bishon@163.com</email>
         </developer>
     </developers>
     <scm>
