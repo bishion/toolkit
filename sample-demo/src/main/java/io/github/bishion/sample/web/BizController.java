@@ -12,8 +12,8 @@ import javax.annotation.Resource;
 
 /**
  * @author: guofangbi
- * @since 2022/5/28-21:30
  * @version: 1.0.0
+ * @since 2022/5/28-21:30
  */
 @RestController
 public class BizController {
@@ -31,7 +31,6 @@ public class BizController {
     @Stamp(action = "#req", bizNo = "#req", actionType = "test", module = "sdd", actionParser = Stamp.SPEL_ACTION_PARSER)
     @PostMapping(value = "/spel")
     public String spel(@RequestParam("text") String text) {
-        BaseReqInfo[] reqInfos = new BaseReqInfo[]{BaseReqInfo.builder().build(), BaseReqInfo.builder().build()};
-        return spelService.spelParser(text, reqInfos);
+        return spelService.spelParser(text, null);
     }
 }

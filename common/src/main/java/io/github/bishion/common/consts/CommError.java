@@ -1,7 +1,5 @@
 package io.github.bishion.common.consts;
 
-import lombok.Getter;
-
 public enum CommError implements BaseError {
     /**
      * 成功
@@ -21,9 +19,16 @@ public enum CommError implements BaseError {
         this.pattern = pattern;
     }
 
-    @Getter
     private String code;
-    @Getter
     private String pattern;
 
+    @Override
+    public String getCode() {
+        return code;
+    }
+
+    @Override
+    public String getPattern() {
+        return pattern;
+    }
 }

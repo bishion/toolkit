@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 /**
  * @author: guofangbi
  * @version: 1.0.0
@@ -36,7 +38,7 @@ public class StampTrack {
     /**
      * 操作人
      */
-    private String operator;
+    private String operatorNo;
     /**
      * 操作人姓名
      */
@@ -78,11 +80,11 @@ public class StampTrack {
     /**
      * 开始时间
      */
-    private Long startTime;
+    private Date startTime;
     /**
      * 结束时间
      */
-    private Long endTime;
+    private Date endTime;
     /**
      * 执行时间ms
      */

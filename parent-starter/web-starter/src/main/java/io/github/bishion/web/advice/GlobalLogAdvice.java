@@ -2,6 +2,7 @@ package io.github.bishion.web.advice;
 
 import cn.hutool.core.util.ClassUtil;
 import cn.hutool.core.util.StrUtil;
+import io.github.bishion.common.biz.ReqInfoService;
 import io.github.bishion.common.consts.BaseConst;
 import io.github.bishion.common.dto.BizException;
 import io.github.bishion.common.util.JsonUtil;
@@ -30,7 +31,7 @@ import java.util.List;
 
 @Aspect
 public class GlobalLogAdvice {
-    private Logger log = LoggerFactory.getLogger(this.getClass());
+    private static final Logger log = LoggerFactory.getLogger(GlobalLogAdvice.class);
     private static final String SEPARATOR = System.lineSeparator();
 
     private static final String MONITOR_MODULE_WEB_API = "WEB_API";
@@ -38,10 +39,16 @@ public class GlobalLogAdvice {
     @Resource
     private RequestMonitorService requestMonitorService;
 
+    @Resource
+    private ReqInfoService reqInfoService;
 
     @Value("${toolkit.log.length:1024}")
     private Integer maxLength;
 
+    /**
+     * 这里暂时使用 RestController 来做切面，后面要支持动态配置切面
+     * AspectJExpressionPointcutAdvisor
+     */
     @Pointcut("@within(org.springframework.web.bind.annotation.RestController) && !execution(* cn..HealthController.*(..))")
     public void pointCut() {
     }
@@ -83,7 +90,7 @@ public class GlobalLogAdvice {
         Method declaredMethod = ClassUtil.getDeclaredMethod(targetClazz, mSig.getName(), mSig.getParameterTypes());
         String methodName = String.format("%s.%s", targetClazz.getName(), declaredMethod.getName());
         sb.append(SEPARATOR).append(" Method:").append(methodName)
-                .append(SEPARATOR).append(" Current User:").append(ReqInfoHolder.getReqInfo())
+                .append(SEPARATOR).append(" Current ReqInfo:").append(reqInfoService.currentReqInfo())
                 .append(SEPARATOR).append(" Input Param:").append(JsonUtil.toStr(assembleParams(pjp)))
                 .append(SEPARATOR).append(" Processed_time:").append(cost).append("ms")
                 .append(SEPARATOR).append(" Output Result:").append(StrUtil.subPre(JsonUtil.toStr(result), maxLength));
@@ -91,8 +98,7 @@ public class GlobalLogAdvice {
             sb.append(SEPARATOR).append(" Error Msg:").append(errorMsg);
         }
         log.info(sb.toString());
-        requestMonitorService.logRequest(MONITOR_MODULE_WEB_API, methodName, cost,
-                successFlag, errorMsg);
+        requestMonitorService.logRequest(MONITOR_MODULE_WEB_API, methodName, cost, successFlag, errorMsg);
     }
 
     private List<Object> assembleParams(ProceedingJoinPoint pjp) {

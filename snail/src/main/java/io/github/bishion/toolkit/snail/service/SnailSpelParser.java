@@ -2,8 +2,8 @@ package io.github.bishion.toolkit.snail.service;
 
 /**
  * @author: guofangbi
- * @since 2022/6/4-20:14
  * @version: 1.0.0
+ * @since 2022/6/4-20:14
  */
 public interface SnailSpelParser {
     String PARAM_REQ = "req";
@@ -13,8 +13,8 @@ public interface SnailSpelParser {
      * 解析操作内容
      *
      * @param params 参数个数
-     * @param action 行动
+     * @param spel   行动
      * @return {@link String}
      */
-    String parse(String action, Object[] params, Object resp);
+    String parse(String spel, Object[] params, Object resp);
 }

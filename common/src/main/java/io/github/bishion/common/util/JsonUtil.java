@@ -6,9 +6,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bishion.common.consts.JsonError;
 import io.github.bishion.common.dto.BizException;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 public class JsonUtil {
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -22,8 +20,7 @@ public class JsonUtil {
 
             return objectMapper.writeValueAsString(object);
         } catch (JsonProcessingException e) {
-            log.error("json 转换错误. {}", ToString.toString(object), e);
-            throw BizException.throwExp(JsonError.TO_STR_ERROR);
+            throw BizException.throwExp(JsonError.TO_STR_ERROR, ToString.toString(object));
         }
     }
 }

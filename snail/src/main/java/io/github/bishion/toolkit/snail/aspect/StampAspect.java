@@ -14,14 +14,15 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.Objects;
 
 /**
  * 打点核心切面
  *
  * @author: guofangbi
- * @since 2022/6/4-20:45
  * @version: 1.0.0
+ * @since 2022/6/4-20:45
  */
 @Slf4j
 @Aspect
@@ -36,11 +37,10 @@ public class StampAspect {
 
     @Around(value = "@annotation(cn.bishion.toolkit.snail.annotation.Stamp)&&@annotation(stamp)")
     public Object process(ProceedingJoinPoint joinPoint, Stamp stamp) throws Throwable {
-        Long startTime = System.currentTimeMillis();
-
+        Date startTime = new Date();
 
         Object[] args = joinPoint.getArgs();
-        StampTrack.StampTrackBuilder builder = buildStampTrackService.createStampTrackBuilder(stamp, args);
+        StampTrack.StampTrackBuilder builder = buildStampTrackService.createStampTrackBuilder(stamp, args, startTime);
         try {
             Object result = joinPoint.proceed();
             String response = Objects.isNull(result) ? null : result.toString();
@@ -56,8 +56,10 @@ public class StampAspect {
             builder.success(BaseConst.FAILURE).response(CharSequenceUtil.subPre(e.getMessage(), maxRespLen));
             throw e;
         } finally {
-            Long endTime = System.currentTimeMillis();
-            builder.costTime(endTime - startTime).endTime(endTime);
+            Date endTime = new Date();
+
+            Long endTimeSeconds = endTime.getTime();
+            builder.costTime(endTimeSeconds - startTime.getTime()).endTime(endTime);
 
             stampTrackService.persist(builder.build(), stamp);
         }

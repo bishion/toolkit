@@ -3,8 +3,6 @@ package io.github.bishion.common.dto;
 import cn.hutool.core.text.CharSequenceUtil;
 import io.github.bishion.common.consts.BaseError;
 import io.github.bishion.common.consts.CommError;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 
@@ -15,8 +13,6 @@ import java.io.Serializable;
  * @version: 1.0.0
  * @since 2022-05-24 23:00:00
  */
-@Getter
-@Setter
 public class BaseResult<T> implements Serializable {
     private static final long serialVersionUID = -7096466014807603807L;
     private String code;
@@ -60,4 +56,27 @@ public class BaseResult<T> implements Serializable {
         return result;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getErrMsg() {
+        return errMsg;
+    }
+
+    public void setErrMsg(String errMsg) {
+        this.errMsg = errMsg;
+    }
+
+    public T getValue() {
+        return value;
+    }
+
+    public void setValue(T value) {
+        this.value = value;
+    }
 }

@@ -14,8 +14,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @author: guofangbi
- * @since 2022/7/2-19:17
  * @version: 1.0.0
+ * @since 2022/7/2-19:17
  */
 @EnableSwagger2
 @PropertySource(value = "classpath:swagger.yml", factory = YamlPropertySourceFactory.class)
@@ -34,9 +34,9 @@ public class SwaggerConfiguration {
     private String maintainer;
     @Value("${swagger.termsOfServiceUrl:默认条款地址}")
     private String termsOfServiceUrl;
-    @Value("${swagger.maintainer:null}")
+    @Value("${swagger.maintainerMail:null}")
     private String maintainerMail;
-    @Value("${swagger.maintainer:null}")
+    @Value("${swagger.maintainerUrl:null}")
     private String maintainerUrl;
 
     @Bean

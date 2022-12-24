@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * 基本页面
+ * 通用分页结果对象
  *
  * @author: guofangbi
  * @version: 1.0.0

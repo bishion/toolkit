@@ -1,11 +1,12 @@
 package io.github.bishion.mybatis;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
+import io.github.bishion.common.biz.ReqInfoService;
 import io.github.bishion.common.consts.BaseConst;
-import io.github.bishion.common.service.BaseReqService;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.reflection.MetaObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -14,12 +15,11 @@ import java.util.Date;
 /**
  * @author MyMetaObjectHandler
  */
-@Slf4j
 @Component
 public class CommonFieldObjectHandler implements MetaObjectHandler {
-
+    private static final Logger log = LoggerFactory.getLogger(CommonFieldObjectHandler.class);
     @Resource
-    private BaseReqService baseReqService;
+    private ReqInfoService reqInfoService;
 
     /**
      * 插入时的填充策略
@@ -54,7 +54,7 @@ public class CommonFieldObjectHandler implements MetaObjectHandler {
     }
 
     private String getOperator() {
-        return StringUtils.defaultIfBlank(baseReqService.getBaseReqInfo().getOperator(), BaseConst.UNKNOWN);
+        return StringUtils.defaultIfBlank(reqInfoService.operatorNo(), BaseConst.UNKNOWN);
     }
 
 }

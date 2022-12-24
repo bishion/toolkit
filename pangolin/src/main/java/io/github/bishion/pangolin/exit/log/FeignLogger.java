@@ -6,18 +6,19 @@ import feign.Request;
 import feign.Response;
 import feign.Util;
 import io.github.bishion.common.consts.BaseConst;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.nio.charset.Charset;
 
 /**
  * @author: guofangbi
- * @since 2022/5/29-11:01
  * @version: 1.0.0
+ * @since 2022/5/29-11:01
  */
-@Slf4j
 public class FeignLogger extends feign.Logger {
 
+    private static final Logger log = LoggerFactory.getLogger(FeignLogger.class);
     private static final String HTTP_METHOD = "[{}]";
     private Integer maxLength;
 

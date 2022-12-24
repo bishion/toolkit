@@ -7,7 +7,8 @@ import io.github.bishion.common.dto.BaseResult;
 import io.github.bishion.common.dto.BizException;
 import io.github.bishion.common.util.ExceptionUtil;
 import io.github.bishion.web.consts.WebError;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -18,9 +19,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-@Slf4j
 @ControllerAdvice
 public class GlobalExceptionAdvice {
+    private static final Logger log = LoggerFactory.getLogger(GlobalExceptionAdvice.class);
+
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseBody
     public Object illegalArgument(IllegalArgumentException e) {

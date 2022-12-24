@@ -1,21 +1,22 @@
 package io.github.bishion.toolkit.snail.service;
 
-import io.github.bishion.common.service.BaseReqService;
+import io.github.bishion.common.biz.EnvService;
+import io.github.bishion.common.biz.ReqInfoService;
+import io.github.bishion.common.dto.BaseReqInfo;
 import io.github.bishion.common.util.BaseAssert;
-import io.github.bishion.common.util.EnvUtil;
 import io.github.bishion.toolkit.snail.annotation.Stamp;
 import io.github.bishion.toolkit.snail.consts.SnailError;
 import io.github.bishion.toolkit.snail.dto.StampTrack;
-import io.github.bishion.toolkit.snail.service.impl.SpelDefaultParser;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.Map;
 
 /**
  * @author: guofangbi
- * @since 2022/6/5-12:29
  * @version: 1.0.0
+ * @since 2022/6/5-12:29
  */
 public class BuildStampTrackService {
     @Value("${spring.application.name}")
@@ -23,16 +24,19 @@ public class BuildStampTrackService {
     @Resource
     private Map<String, SnailSpelParser> actionParserMap;
     @Resource
-    private SpelDefaultParser spelDefaultParser;
+    private SnailSpelParser spelDefaultParser;
     @Resource
     private Map<String, ParamParser> paramParserMap;
     @Resource
-    public BaseReqService baseReqService;
+    public ReqInfoService loginInfoService;
 
-    public StampTrack.StampTrackBuilder createStampTrackBuilder(Stamp stamp, Object[] params) {
+    @Resource
+    private EnvService envService;
+
+    public StampTrack.StampTrackBuilder createStampTrackBuilder(Stamp stamp, Object[] params, Date startTime) {
         StampTrack.StampTrackBuilder builder = StampTrack.builder();
 
-        builder.appName(appName).hostIp(EnvUtil.HOST_IP).hostName(EnvUtil.LOCAL_HOSTNAME);
+        builder.appName(appName).hostIp(envService.hostIp()).hostName(envService.podName());
         builder.module(stamp.module()).actionType(stamp.actionType());
 
         buildBaseReqInfo(builder);
@@ -43,8 +47,8 @@ public class BuildStampTrackService {
 
 
     public void buildBaseReqInfo(StampTrack.StampTrackBuilder builder) {
-        BaseReqInfo baseReqInfo = baseReqService.getBaseReqInfo();
-        builder.clientIp(baseReqInfo.getClientIp()).operator(baseReqInfo.getOperator())
+        BaseReqInfo baseReqInfo = loginInfoService.currentReqInfo();
+        builder.clientIp(baseReqInfo.getClientIp()).operatorNo(baseReqInfo.getOperatorNo())
                 .operatorName(baseReqInfo.getOperatorName());
     }
 

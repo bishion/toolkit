@@ -1,11 +1,19 @@
 package io.github.bishion.toolkit.snail;
 
+import cn.hutool.core.util.ArrayUtil;
+import io.github.bishion.common.consts.BaseConst;
 import io.github.bishion.toolkit.snail.aspect.StampAspect;
 import io.github.bishion.toolkit.snail.service.*;
-import io.github.bishion.toolkit.snail.service.impl.*;
+import io.github.bishion.toolkit.snail.service.impl.LogStampTracker;
+import io.github.bishion.toolkit.snail.service.impl.SpelParseService;
+import io.github.bishion.toolkit.snail.service.impl.StampTrackService;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.expression.BeanFactoryResolver;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author: guofangbi
@@ -15,17 +23,19 @@ import org.springframework.context.expression.BeanFactoryResolver;
 public class SnailConfiguration {
     @Bean
     public SnailSpelParser defaultActionParser() {
-        return new DefaultActionParser();
+        return (action, params, resp) -> action;
     }
 
     @Bean
     public ParamParser defaultParamParser() {
-        return new DefaultParamParser();
+        return params -> Arrays.deepToString(params);
     }
 
     @Bean
     public CloseoutService defaultCloseoutService() {
-        return new DefaultCloseoutService();
+        return stampTrack -> {
+            // 默认收尾啥都不做
+        };
     }
 
     @Bean
@@ -34,8 +44,18 @@ public class SnailConfiguration {
     }
 
     @Bean
-    public SnailSpelParser spelDefaultParser() {
-        return new SpelDefaultParser();
+    public SnailSpelParser spelDefaultParser(SpelParseService spelParseService) {
+        return (spel, params, resp) -> {
+            Map<String, Object> param = new HashMap<>(BaseConst.INT_1);
+            if (ArrayUtil.length(params) == BaseConst.INT_1) {
+                param.put(SnailSpelParser.PARAM_REQ, params[BaseConst.INT_0]);
+            } else {
+                param.put(SnailSpelParser.PARAM_REQ, params);
+            }
+            param.put(SnailSpelParser.PARAM_RESP, resp);
+            return spelParseService.parseSpel(spel, param);
+        };
+
     }
 
     @Bean
