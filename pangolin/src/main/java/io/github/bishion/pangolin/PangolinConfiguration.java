@@ -2,10 +2,10 @@ package io.github.bishion.pangolin;
 
 import feign.RequestInterceptor;
 import io.github.bishion.common.dto.BaseReqInfo;
+import io.github.bishion.common.util.ReqInfoHolder;
 import io.github.bishion.pangolin.entrance.ReqInfoInterceptor;
 import io.github.bishion.pangolin.exit.FillReqInfoJudgeService;
 import io.github.bishion.pangolin.exit.log.FeignLogger;
-import io.github.bishion.pangolin.util.ReqInfoHolder;
 import io.github.bishion.pangolin.util.ReqInfoUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,7 +48,7 @@ public class PangolinConfiguration implements WebMvcConfigurer {
             if (Objects.isNull(reqInfo)) {
                 log.error("请求信息缺失.{}", template.feignTarget().url());
             }
-            template.headers(ReqInfoUtil.convert2MapList(reqInfo));
+            template.headers(ReqInfoUtil.convert2MapList(reqInfo, appName));
         };
     }
 
