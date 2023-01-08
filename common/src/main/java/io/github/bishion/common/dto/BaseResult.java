@@ -16,12 +16,12 @@ import java.io.Serializable;
 public class BaseResult<T> implements Serializable {
     private static final long serialVersionUID = -7096466014807603807L;
     private String code;
-    private String errMsg;
+    private String message;
     private T value;
 
-    public BaseResult(String code, String errMsg) {
+    public BaseResult(String code, String message) {
         this.code = code;
-        this.errMsg = errMsg;
+        this.message = message;
     }
 
     private BaseResult() {
@@ -35,7 +35,7 @@ public class BaseResult<T> implements Serializable {
         if (valid()) {
             return value;
         }
-        throw BizException.throwExp(code, errMsg);
+        throw BizException.throwExp(code, message);
     }
 
     public static <T> BaseResult<T> fail(BaseError error, Object... param) {
@@ -64,12 +64,12 @@ public class BaseResult<T> implements Serializable {
         this.code = code;
     }
 
-    public String getErrMsg() {
-        return errMsg;
+    public String getMessage() {
+        return message;
     }
 
-    public void setErrMsg(String errMsg) {
-        this.errMsg = errMsg;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public T getValue() {
