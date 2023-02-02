@@ -9,7 +9,7 @@ public interface EnvService {
 
     String hostIp();
 
-    String podIpd();
+    String podIp();
 
     String podName();
 }

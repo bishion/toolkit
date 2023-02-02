@@ -1,6 +1,7 @@
 package io.github.bishion.mybatis;
 
 import com.baomidou.mybatisplus.annotation.*;
+import io.github.bishion.common.util.ToString;
 
 import java.util.Date;
 
@@ -106,14 +107,6 @@ public abstract class BaseEntity {
 
     @Override
     public String toString() {
-        return "BaseEntity{" +
-                "id=" + id +
-                ", version=" + version +
-                ", isDeleted='" + isDeleted + '\'' +
-                ", creator='" + creator + '\'' +
-                ", gmtCreated=" + gmtCreated +
-                ", modifier='" + modifier + '\'' +
-                ", gmtModified=" + gmtModified +
-                '}';
+        return ToString.toString(this);
     }
 }
