@@ -5,8 +5,6 @@ import io.github.bishion.common.biz.ReqInfoService;
 import io.github.bishion.common.consts.BaseConst;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.reflection.MetaObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -17,7 +15,6 @@ import java.util.Date;
  */
 @Component
 public class CommonFieldObjectHandler implements MetaObjectHandler {
-    private static final Logger log = LoggerFactory.getLogger(CommonFieldObjectHandler.class);
     @Resource
     private ReqInfoService reqInfoService;
 
@@ -32,7 +29,6 @@ public class CommonFieldObjectHandler implements MetaObjectHandler {
         this.setFieldValByName("gmtCreated", now, metaObject);
         this.setFieldValByName("gmtModified", now, metaObject);
         String operator = getOperator();
-        log.debug("start insert fill operator:{}", operator);
 
         this.setFieldValByName("creator", operator, metaObject);
         this.setFieldValByName("modifier", operator, metaObject);
@@ -47,7 +43,6 @@ public class CommonFieldObjectHandler implements MetaObjectHandler {
     @Override
     public void updateFill(MetaObject metaObject) {
         String operator = getOperator();
-        log.debug("start update fill operator:{}", operator);
 
         this.setFieldValByName("gmtModified", new Date(), metaObject);
         this.setFieldValByName("modifier", operator, metaObject);
