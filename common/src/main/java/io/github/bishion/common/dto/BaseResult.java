@@ -38,6 +38,12 @@ public class BaseResult<T> implements Serializable {
         throw BizException.throwExp(code, message);
     }
 
+    public void assertResult() {
+        if (!valid()) {
+            throw BizException.throwExp(code, message);
+        }
+    }
+
     public static <T> BaseResult<T> fail(BaseError error, Object... param) {
         return new BaseResult<>(error.getCode(), error.getMsg(param));
 
