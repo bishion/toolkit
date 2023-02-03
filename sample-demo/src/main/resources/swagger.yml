@@ -1,5 +1,0 @@
-swagger:
-  basePackage: io.github.bishion.sample
-  title: 示例项目
-  description: 示例项目接口文档
-  version: 1.0.1-SNAPSHOT
