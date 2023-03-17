@@ -149,7 +149,7 @@ public class BaseConst {
     /**
      * 分隔符
      */
-    public static final String SEPARATOR = System.lineSeparator();
+    public static final String NEW_LINE = System.lineSeparator();
 
     /**
      * 系统

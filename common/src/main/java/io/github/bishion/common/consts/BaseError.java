@@ -1,5 +1,7 @@
 package io.github.bishion.common.consts;
 
+import cn.hutool.core.util.StrUtil;
+
 import java.text.MessageFormat;
 import java.util.Objects;
 
@@ -40,5 +42,11 @@ public interface BaseError {
 
         MessageFormat msgFmt = new MessageFormat(getPattern());
         return msgFmt.format(params);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(StrUtil.format("{},{}", 123, "123", "123"));
+        MessageFormat msgFmt = new MessageFormat("hehe{0},{1},{2}");
+        System.out.println(msgFmt.format(null));
     }
 }

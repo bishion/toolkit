@@ -34,7 +34,7 @@ public abstract class BaseEntity {
     /**
      * 创建时间
      */
-    @TableField(value = "gmt_created", fill = FieldFill.INSERT_UPDATE)
+    @TableField(value = "gmt_created", fill = FieldFill.INSERT)
     private Date gmtCreated;
 
     /**

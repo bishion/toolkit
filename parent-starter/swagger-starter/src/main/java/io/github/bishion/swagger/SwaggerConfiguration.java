@@ -3,6 +3,7 @@ package io.github.bishion.swagger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.annotation.Order;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -18,6 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @since 2022/7/2-19:17
  */
 @EnableSwagger2
+@Order(Integer.MIN_VALUE)
 @PropertySource(value = "classpath:swagger.yml", factory = YamlPropertySourceFactory.class)
 public class SwaggerConfiguration {
     @Value("${swagger.basePackage}")

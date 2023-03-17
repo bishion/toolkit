@@ -33,15 +33,15 @@ public class FeignLogger extends feign.Logger {
 
     @Override
     protected Response logAndRebufferResponse(String configKey, Level logLevel, Response response, long elapsedTime) {
-        StringBuilder sb = new StringBuilder(configKey).append(BaseConst.SEPARATOR);
+        StringBuilder sb = new StringBuilder(configKey).append(BaseConst.NEW_LINE);
         try {
             Request request = response.request();
             String requestMsg = CharSequenceUtil.format(HTTP_METHOD, request.httpMethod()) + request.url();
-            sb.append("Request: ").append(subStr(requestMsg)).append(BaseConst.SEPARATOR);
+            sb.append("Request: ").append(subStr(requestMsg)).append(BaseConst.NEW_LINE);
 
             boolean hasReqBody = request.requestTemplate().body() != null;
             String bodyMsg = hasReqBody ? new String(request.requestTemplate().body()) : "";
-            sb.append("Param: ").append(bodyMsg).append(BaseConst.SEPARATOR);
+            sb.append("Param: ").append(bodyMsg).append(BaseConst.NEW_LINE);
 
             String responseMsg;
             int status = response.status();

@@ -42,7 +42,7 @@ public class ToString {
 class NoNullStyle extends ToStringStyle implements Serializable {
 
     private static final long serialVersionUID = 2347542971151578670L;
-    private static final CharSequence SECRET_FIELD = "secret";
+    private static final String[] SECRET_FIELD = new String[]{"password", "secret"};
 
     NoNullStyle() {
         super();
@@ -52,7 +52,7 @@ class NoNullStyle extends ToStringStyle implements Serializable {
 
     @Override
     public void append(StringBuffer buffer, String fieldName, Object value, Boolean fullDetail) {
-        if (value != null && !StringUtils.containsIgnoreCase(fieldName, SECRET_FIELD)) {
+        if (value != null && !StringUtils.containsAnyIgnoreCase(fieldName, SECRET_FIELD)) {
             super.append(buffer, fieldName, value, fullDetail);
         }
     }

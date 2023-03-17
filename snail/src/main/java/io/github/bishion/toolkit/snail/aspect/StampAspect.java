@@ -35,7 +35,7 @@ public class StampAspect {
     @Resource
     private StampTrackService stampTrackService;
 
-    @Around(value = "@annotation(cn.bishion.toolkit.snail.annotation.Stamp)&&@annotation(stamp)")
+    @Around(value = "@annotation(io.github.bishion.toolkit.snail.annotation.Stamp)")
     public Object process(ProceedingJoinPoint joinPoint, Stamp stamp) throws Throwable {
         Date startTime = new Date();
 

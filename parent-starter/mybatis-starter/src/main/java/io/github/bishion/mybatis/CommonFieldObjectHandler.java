@@ -5,7 +5,6 @@ import io.github.bishion.common.biz.ReqInfoService;
 import io.github.bishion.common.consts.BaseConst;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.reflection.MetaObject;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -13,7 +12,6 @@ import java.util.Date;
 /**
  * @author MyMetaObjectHandler
  */
-@Component
 public class CommonFieldObjectHandler implements MetaObjectHandler {
     @Resource
     private ReqInfoService reqInfoService;
