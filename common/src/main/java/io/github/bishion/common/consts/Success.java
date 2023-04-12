@@ -29,6 +29,11 @@ public enum Success implements BaseError {
     }
 
     @Override
+    public String getMsg(Object... params) {
+        return pattern;
+    }
+
+    @Override
     public String getCode() {
         return code;
     }

@@ -2,6 +2,7 @@ package io.github.bishion.common.util;
 
 import cn.hutool.core.text.CharSequenceUtil;
 import io.github.bishion.common.consts.BaseError;
+import io.github.bishion.common.consts.CommError;
 import io.github.bishion.common.dto.BizException;
 
 import java.util.Objects;
@@ -23,9 +24,27 @@ public class BaseAssert {
         }
     }
 
+    public static void checkParam(boolean expression, String message) {
+        if (!expression) {
+            throw BizException.throwExp(CommError.PARAM_HAS_BLANK, message);
+        }
+    }
+
     public static void nonNull(Object obj, BaseError error, Object... params) {
         if (Objects.isNull(obj)) {
             throw BizException.throwExp(error, params);
+        }
+    }
+
+    public static void paramNotNull(Object obj, String message) {
+        if (Objects.isNull(obj)) {
+            throw BizException.throwExp(CommError.PARAM_HAS_BLANK, message);
+        }
+    }
+
+    public static void nonBlank(String message, String... obj) {
+        if (CharSequenceUtil.hasBlank(obj)) {
+            throw BizException.throwExp(CommError.PARAM_HAS_BLANK, message);
         }
     }
 

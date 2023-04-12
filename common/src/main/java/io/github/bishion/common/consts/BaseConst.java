@@ -24,11 +24,11 @@ public class BaseConst {
     /**
      * 字符 0
      */
-    public static final String VALID = "0";
+    public static final String STR_0 = "0";
     /**
      * 字符 1
      */
-    public static final String INVALID = "1";
+    public static final String STR_1 = "1";
     /**
      * 数字 0
      */
@@ -130,6 +130,10 @@ public class BaseConst {
      * 空格
      */
     public static final String SPACE = " ";
+    /**
+     * 竖线
+     */
+    public static final String BAR = "|";
     /**
      * 空字符串
      */

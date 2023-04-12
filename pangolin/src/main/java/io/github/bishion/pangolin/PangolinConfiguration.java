@@ -79,7 +79,7 @@ public class PangolinConfiguration implements WebMvcConfigurer {
     }
 
     @Bean
-    @ConditionalOnProperty(name = "za.mt.feign.aroundLog.enable", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(name = "toolkit.pangolin.feign.aroundLogEnabled", havingValue = "true", matchIfMissing = true)
     public feign.Logger.Level feignLoggerLevel() {
         return feign.Logger.Level.FULL;
     }

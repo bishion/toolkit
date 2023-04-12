@@ -2,8 +2,6 @@ package io.github.bishion.common.consts;
 
 import cn.hutool.core.util.StrUtil;
 
-import java.util.Objects;
-
 /**
  * 基本错误
  *
@@ -12,7 +10,6 @@ import java.util.Objects;
  * @since 2022-05-24 16:29:02
  */
 public interface BaseError {
-    Object[] EMPTY_ARR = new String[]{BaseConst.EMPTY, BaseConst.EMPTY, BaseConst.EMPTY, BaseConst.EMPTY, BaseConst.EMPTY};
 
     /**
      * 错误代码
@@ -35,10 +32,6 @@ public interface BaseError {
      * @return {@link String}
      */
     default String getMsg(Object... params) {
-        if (Objects.isNull(params)) {
-            params = EMPTY_ARR;
-        }
-
         return StrUtil.format(getPattern(), params);
     }
 }
