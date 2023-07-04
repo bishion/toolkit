@@ -8,3 +8,5 @@
 4. web-starter: 79
 5. swagger-starter: 78
 6. mybatis-starter: 77
+
+export GPG_TTY=$(tty)
